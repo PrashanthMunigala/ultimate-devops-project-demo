@@ -20,10 +20,9 @@
     <PackageReference Include="OpenTelemetry.AutoInstrumentation" Version="1.9.0" />
   </ItemGroup>
 
-  <!-- Remove the Protobuf entry if not required -->
-  <!-- <ItemGroup>
-    <Protobuf Include="proto\\demo.proto" GrpcServices="none" />
-  </ItemGroup> -->
+  <ItemGroup>
+		<!-- GrpcServices is 'none' so that we do not need to depend on the grpc nuget package, and we only need protobuf support. -->
+		<Protobuf Include="proto\demo.proto" GrpcServices="none" />
 
   <ItemGroup>
     <Folder Include="proto\\" />
